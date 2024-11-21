@@ -31,7 +31,7 @@ public class Main implements RequestHandler<Map<String, Object>, Map<String, Str
 
         String originUrl = bodyMap.get("originalUrl");
         String expirationTime = bodyMap.get("expirationTime");
-        long expirationTimeInSeconds = Long.parseLong(expirationTime) * 3600;
+        long expirationTimeInSeconds = Long.parseLong(expirationTime);
 
         String shortUrlCode = UUID.randomUUID().toString().substring(0,8);
 
@@ -48,7 +48,7 @@ public class Main implements RequestHandler<Map<String, Object>, Map<String, Str
             s3Client.putObject(request, RequestBody.fromString(urlDataJson));
 
         } catch (Exception exception) {
-            throw new RuntimeException("Error saving URL data to S3: " + exception.getMessage(), exception);
+            throw new RuntimeException("Error saving data to S3: " + exception.getMessage(), exception);
         }
 
         Map<String,String> response = new HashMap<>();
