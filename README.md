@@ -11,6 +11,15 @@ O projeto trata-se de um sistema de encurtamento de URLs utilizando a AWS como i
 
 <br>
 
+## Features of this role:
+This first function is responsible for generating and storing the shortened links in an S3 bucket, along with information such as the original URL and expiration time.
+
+<br>
+
+Esta primeira função é responsável por  gerar e armazenar os links encurtados em um bucket S3, junto com informações como a URL original e o tempo de expiração
+
+<br>
+
 ## Technologies used:
 - Java 17
 - AWS Lambda
